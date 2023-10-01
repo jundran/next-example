@@ -1,0 +1,97 @@
+.container {
+	flex-direction: column;
+	height: var(--header-height);
+	position: fixed;
+	z-index: 1;
+	justify-items: center;
+}
+
+.menu {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 20px;
+	.right {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+	}
+}
+
+.right {
+	display: flex;
+}
+
+/* Dropdown */
+.dropdown {
+	position: absolute;
+	top: 64px;
+	width: 100vw;
+	transition: height linear 200ms;
+	z-index: 1;
+	flex-direction: column;
+	align-items: center;
+	background: var(--purple-grey);
+	color: #fff;
+	height: 0;
+	overflow: hidden;
+}
+
+.dropdown a,
+.dropdown button {
+	display: block;
+	padding: 32px;
+	font-size: 2rem;
+	color: inherit;
+	outline-offset: -15px;
+}
+.dropdown a {
+	text-align: center;
+	text-decoration: none;
+}
+.dropdown button {
+	background: none;
+	border: none;
+	width: 100%;
+}
+
+.dropdown.open {
+	height: 650px;
+	overflow: scroll;
+}
+
+/* Hamburger */
+.hamburger {
+	padding: 16px 8px;
+	border: none;
+	background: none;
+}
+.hamburger span {
+	display: block;
+	position: relative;
+}
+
+.hamburger span,
+.hamburger span::before,
+.hamburger span::after {
+	border-radius: 1px;
+	width: 16px;
+	height: 3px;
+	background: #fff;
+}
+
+.hamburger span::before,
+.hamburger span::after {
+	content: '';
+	position: absolute;
+	left: 0;
+}
+
+.hamburger span::before {
+	bottom: 6px;
+}
+
+.hamburger span::after {
+	top: 6px;
+}

@@ -1,0 +1,37 @@
+.title {
+	font-size: 3rem;
+	text-align: center;
+	margin:  20px 0 60px 0;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.image {
+	width: 100%;
+	object-fit: contain;
+	flex-shrink: 1;
+	border-radius: 5px;
+	animation: move 2s infinite ease-in-out alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0px) scale(1.03);
+  }
+}
+
+@media(max-width: 700px) {
+	.container {
+		flex-direction: column;
+	}
+	.container form {
+		width: 100%;
+	}
+}
