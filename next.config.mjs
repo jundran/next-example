@@ -18,8 +18,7 @@ const config = {
 				port: ''
       }
     ]
-  },
-	output: 'standalone'
+  }
 }
 
 export default config

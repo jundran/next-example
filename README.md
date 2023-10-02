@@ -1,10 +1,10 @@
 # next-example
 
 ## Live
-https://jundran.github.io/next-example
+https://next-example-production.up.railway.app/home
 
 ## Description
-An app to put into practice what I have learned about Next JS and Supabase
+A project to put into practice what I have learned about Next JS and Supabase
 
 ## Images
 https://pexels.com
