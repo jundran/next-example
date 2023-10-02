@@ -1,5 +1,6 @@
 "use client"
 import { FormEvent, useState } from 'react'
+import style from './contactForm.module.css'
 
 export default function Form () {
 	const [messageSent, setMessageSent] = useState(false)
@@ -54,7 +55,7 @@ export default function Form () {
 					/>
 				</li>
 			</ul>
-			{messageSent && <p>Message Sent</p>}
+			{messageSent && <p className={style.messageSent}>Message Sent</p>}
 			<button>Send</button>
 		</form>
 	)
