@@ -21,6 +21,7 @@ type Props = {
 	layoutClass: string
 	links: LinkData[]
 }
+// TODO - keep tab locked to menu when open if possible? (not same as inert)
 export default function MobileMenu ({ layoutClass, links }: Props ) {
 	const [showMenu, setShowMenu] = useState(false)
 	const menuRef = useRef<HTMLDivElement>(null)

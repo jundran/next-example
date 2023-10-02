@@ -2,6 +2,7 @@ import supabase from "@/config/supabaseClient"
 import { notFound } from "next/navigation"
 import Article from "@/components/article/article"
 
+// TODO - avoid double call to getData for meta and RFC
 export async function generateMetadata({ params }: { params: { id: string } }) {
 	const data = await getData(params.id)
 	if (!data) return  notFound()
