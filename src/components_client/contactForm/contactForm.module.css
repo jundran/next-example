@@ -1,3 +1,8 @@
+.form {
+	width: 400px;
+	max-width: 100%;
+}
+
 .messageSent {
 	color: orange;
 	font-weight: 600;

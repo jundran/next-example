@@ -26,7 +26,7 @@ export default function Form () {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className={style.form}>
 			<ul className='ul-unstyled'>
 				<li className='form-field'>
 					<label className='label' htmlFor="name">Name</label>
