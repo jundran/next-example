@@ -42,7 +42,7 @@ export default function Header () {
 		<>
 			<header className={`${style.container} tablet-never`}>
 				<div className={`container ${style.content}`}>
-					<Link className='menu-link' href='/home'>NextExample</Link>
+					<Link className='menu-link' href='/'>NextExample</Link>
 					<div className={style.right}>
 						<ThemeToggle />
 						<nav>

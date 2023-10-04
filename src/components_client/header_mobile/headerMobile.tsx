@@ -41,7 +41,7 @@ export default function MobileMenu ({ layoutClass, links }: Props ) {
 			<div className={style.menu}>
 				<Hamburger showMenu={showMenu} setShowMenu={() => setShowMenu(!showMenu)} />
 				<div className={style.right}>
-					<Link className='menu-link' href='/home'>NextExample</Link>
+					<Link className='menu-link' href='/'>NextExample</Link>
 					<ThemeToggle />
 				</div>
 			</div>
