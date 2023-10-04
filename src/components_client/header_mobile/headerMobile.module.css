@@ -12,15 +12,12 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 20px;
-	.right {
-		display: flex;
-		align-items: center;
-		gap: 40px;
-	}
 }
 
 .right {
 	display: flex;
+	align-items: center;
+	gap: 40px;
 }
 
 /* Dropdown */
