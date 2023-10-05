@@ -24,7 +24,7 @@
     ],
     "paths": {
       "@/*": [
-        "./src/*"
+        "./app/*"
       ],
       "~/*": [
         "./*"
@@ -36,11 +36,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-    // "supabase_seed/users.js",
-    // "supabase_seed/seed.js",
-    // "supabase_seed/articles.js",
-    // "supabase_seed/supabaseClient.js"
-  ],
+	],
   "exclude": [
     "node_modules"
   ]

@@ -7,26 +7,25 @@
     "install-seed": "cd supabase_seed && npm install",
     "dev": "next dev -p 3099",
     "build": "next build",
-    "start": "next start",
+    "start": "next start ",
+    "start-dev": "next start -p 3099",
     "lint": "next lint",
     "seed": "node supabase_seed/seed.js"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.37.0",
-    "bcryptjs": "^2.4.3",
-    "next": "^13.5.2",
+    "@supabase/auth-helpers-nextjs": "^0.8.1",
+    "@supabase/supabase-js": "^2.38.1",
+    "lorem-ipsum": "^2.0.8",
+    "next": "^13.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.4",
-    "@types/node": "^20.6.3",
-    "@types/react": "^18.2.22",
-    "@types/react-dom": "^18.2.7",
-    "eslint": "^8.49.0",
-    "eslint-config-next": "^13.5.2",
-    "lorem-ipsum": "^2.0.8",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "^13.5.4",
     "typescript": "^5.2.2"
   }
 }
