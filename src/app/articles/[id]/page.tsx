@@ -20,13 +20,12 @@ async function getData(id: string) {
 		.eq('id', id)
 		.single()
 
-	if (error) console.error(error)
+	if (error) notFound() // Will redirect and not return
 	return data
 }
 
 export default async function SingleArticlePage({ params }: { params: { id: string } }) {
 	const data = await getData(params.id)
-	if (!data) return notFound()
 	return (
 		<main>
 			<Article data={data} />

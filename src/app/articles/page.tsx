@@ -19,13 +19,12 @@ async function getData() {
 		.select()
 		.order('created_at', { ascending: false })
 
-	if (error) console.error(error)
+	if (error) return notFound() // Will redirect and not return
 	return data
 }
 
 export default async function ArticlePage() {
 	const articles = await getData()
-	if (!articles) return notFound()
 	return (
 		<main className={style.container}>
 			{articles.map((data, index) =>
