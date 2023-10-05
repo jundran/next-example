@@ -26,9 +26,6 @@ async function getData(id: string) {
 
 export default async function SingleArticlePage({ params }: { params: { id: string } }) {
 	const data = await getData(params.id)
-	// TODO - create custom not-found file for whole app as provided one has
-	// the height of the window, going under the header but pushing down the footer
-	// https://nextjs.org/docs/app/api-reference/file-conventions/not-found
 	if (!data) return notFound()
 	return (
 		<main>
