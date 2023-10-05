@@ -2,7 +2,7 @@ import { Metadata } from 'next/types'
 import style from './page.module.css'
 import Image from 'next/image'
 import ContactImage from '~/public/images/contact.jpg'
-import Form from '@/components_client/contactForm/contactForm'
+import Form from './contactForm/contactForm'
 
 export const metadata: Metadata = {
   title: 'NextExample | Contact',

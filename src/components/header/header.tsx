@@ -1,7 +1,7 @@
 import Link from "next/link"
-import ThemeToggle from '@/components_client/themeToggle/themeToggle'
+import ThemeToggle from '@/components/header/themeToggle/themeToggle'
 import style from './header.module.css'
-import MobileMenu from '@/components_client/header_mobile/headerMobile'
+import MobileMenu from './header_mobile/headerMobile'
 import { LinkData } from "@/types/app"
 
 const links: LinkData[] = [

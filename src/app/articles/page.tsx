@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import ArticleListItem from "@/components/articleListItem/articleListItem"
+import ArticleListItem from "./articleListItem/articleListItem"
 import style from './page.module.css'
 import { Metadata } from "next/types"
 import supabase from "@/config/supabaseClient"
