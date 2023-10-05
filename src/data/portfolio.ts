@@ -15,19 +15,31 @@ const art: CategoryItem[] = [
 		id: crypto.randomUUID(),
 		title: 'Sheep',
 		text: getText(),
-		image: '/images/portfolio/art/sheep.jpg'
+		image: {
+			src: '/images/portfolio/art/sheep.jpg',
+			width: 640,
+			height: 517
+		}
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'Museum',
 		text: getText(),
-		image: '/images/portfolio/art/museum.jpg'
+		image: {
+			src: '/images/portfolio/art/museum.jpg',
+			width: 640,
+			height: 427
+		}
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'Valley',
 		text: getText(),
-		image: '/images/portfolio/art/valley.jpg'
+		image: {
+			src: '/images/portfolio/art/valley.jpg',
+			width: 640,
+			height: 434
+		}
 	}
 ]
 
@@ -36,19 +48,31 @@ const gadgets: CategoryItem[] = [
 		id: crypto.randomUUID(),
 		title: 'Headphones',
 		text: getText(),
-		image: '/images/portfolio/gadgets/headphones.jpg'
+		image: {
+			src: '/images/portfolio/gadgets/headphones.jpg',
+			width: 640,
+			height: 427
+		}
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'Drone',
 		text: getText(),
-		image: '/images/portfolio/gadgets/drone.jpg'
+		image: {
+			src: '/images/portfolio/gadgets/drone.jpg',
+			width: 640,
+			height: 427
+		}
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'Playstation',
 		text: getText(),
-		image: '/images/portfolio/gadgets/playstation.jpg'
+		image: {
+			src: '/images/portfolio/gadgets/playstation.jpg',
+			width: 640,
+			height: 427
+		}
 	}
 ]
 
@@ -57,19 +81,31 @@ const sports: CategoryItem[] = [
 		id: crypto.randomUUID(),
 		title: 'Paragliding',
 		text: getText(),
-		image: '/images/portfolio/sports/paragliding.jpg'
+		image: {
+			src: '/images/portfolio/sports/paragliding.jpg',
+			width: 640,
+			height: 427
+		}
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'Skiing',
 		text: getText(),
-		image: '/images/portfolio/sports/skiing.jpg'
+		image: {
+			src: '/images/portfolio/sports/skiing.jpg',
+			width: 640,
+			height: 424
+		}
 	},
 	{
 		id: crypto.randomUUID(),
 		title: 'Mountain Biking',
 		text: getText(),
-		image: '/images/portfolio/sports/mountain-biking.jpg'
+		image: {
+			src: '/images/portfolio/sports/mountain-biking.jpg',
+			width: 640,
+			height: 427
+		}
 	}
 ]
 

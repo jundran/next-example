@@ -1,17 +1,15 @@
-import { Article } from "@/types/app"
 import Image from "next/image"
-import style from './articleListItem.module.css'
-import { getImageData } from "@/utils/image"
 import Link from "next/link"
+import { Article } from "@/types/app"
+import style from './articleListItem.module.css'
 
 export default async function ArticleListItem ({ data, index }: { data: Article, index: number }) {
-	const imageData = await getImageData(data.image)
 	return (
 		<Link className={`${style.container} link-unstyled`} href={`/articles/${data.id}`}>
 			<h2 className="mobile-only">{data.title}</h2>
 			<Image
-				className={style.image} src={data.image} alt={data.title}
-				width={imageData.width} height={imageData.height}
+				className={style.image} src={data.image.src} alt={data.title}
+				width={data.image.width} height={data.image.height}
 				priority={index === 0}
 			/>
 			<div>

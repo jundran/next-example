@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import portfolioData from '@/data/portfolio'
-import { CategoryItem, CategoryName } from '~/src/types/app'
-import { getImageData } from '~/src/utils/image'
+import { CategoryItem, CategoryName } from '@/types/app'
 import { capitalize } from '@/utils/format'
 import style from './page.module.css'
 
@@ -27,13 +26,12 @@ export default function Category({ params }: { params: { category: CategoryName 
 }
 
 async function PortfolioItem ({ data }: { data: CategoryItem }) {
-	const imageData = await getImageData(data.image)
 	return (
 		<div className={style.item}>
 			<h2 className='mobile-only'>{data.title}</h2>
 			<Image
-				className={style.image} src={data.image} alt={data.title}
-				width={imageData.width} height={imageData.height}
+				className={style.image} src={data.image.src} alt={data.title}
+				width={data.image.width} height={data.image.height}
 			/>
 			<div>
 				<h2 className='mobile-never'>{data.title}</h2>

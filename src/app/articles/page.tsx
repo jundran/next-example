@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 }
 
 async function getData() {
-	// TODO - remove for production
-	await new Promise(resolve => setTimeout(resolve, 1000))	// Simulate loading delay
+	// await new Promise(resolve => setTimeout(resolve, 1000))	// Simulate loading delay
 
 	console.log(`Fetching articles from supabase`)
 	const { data, error } = await supabase

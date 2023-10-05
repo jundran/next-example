@@ -1,6 +1,5 @@
 import style from './page.module.css'
 import Image from 'next/image'
-import { getImageData } from '@/utils/image'
 import Link from 'next/link'
 import { Metadata } from 'next/types'
 
@@ -27,12 +26,11 @@ export default async function Home() {
 
 async function CoolImage({ layoutClass }: { layoutClass: string }) {
 	const imageSrc = 'https://source.unsplash.com/1OtUkD_8svc'
-	const imageData = await getImageData(imageSrc)
 	return (
 		<Image
-			className={`${style.image} ${layoutClass}`} src={imageSrc} alt='Next JS'
-			width={imageData.width} height={imageData.height}
-			priority={true}
+			className={`${style.image} ${layoutClass}`}
+			src={imageSrc} alt='View of sky from bottom of canyon'
+			width={1080} height={720} priority={true}
 		/>
 	)
 }

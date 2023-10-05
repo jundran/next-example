@@ -18,6 +18,7 @@
 }
 
 .image {
+	display: block;
 	width: calc(50% - (var(--gap) / 2));
 	height: auto;
 	flex-shrink: 0;

@@ -1,10 +1,8 @@
 import Image from "next/image"
 import { Article } from "@/types/app"
 import style from './article.module.css'
-import { getImageData } from "@/utils/image"
 
 export default async function Article ({ data }: { data: Article }) {
-	const imageData = await getImageData(data.image)
 	return (
 		<div className={style.container}>
 			<div className={style.header}>
@@ -14,8 +12,8 @@ export default async function Article ({ data }: { data: Article }) {
 					<p className={style.author}>{data.author.name}</p>
 				</div>
 				<Image
-					className={style.image} src={data.image} alt={data.title}
-					width={imageData.width} height={imageData.height}
+					className={style.image} src={data.image.src} alt={data.title}
+					width={data.image.width} height={data.image.height}
 					priority={true}
 				/>
 			</div>
