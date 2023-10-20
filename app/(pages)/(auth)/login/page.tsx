@@ -48,11 +48,25 @@ export default function LoginPage() {
 		}
 	}
 
+	async function handleGitHubLogin() {
+		const supabase = createClientComponentClient()
+    await supabase.auth.signInWithOAuth({
+      provider: "github",
+      options: {
+        redirectTo: `${location.origin}/auth/callback`
+      }
+    })
+	}
+
 	return (
     <main>
 			<div className={style.container}>
 				<h1>Welcome Back</h1>
 				<h2>Log in to see the dashboard</h2>
+				<h3>Login With GitHub</h3>
+				<button onClick={handleGitHubLogin}>Github login</button>
+
+				<h3>Login With Username and Password</h3>
 				<LoginForm error={error} handleSubmit={handleSubmit} />
 				<Link className={style.changeFormLink} href='/signup'>
 					Create new account instead
