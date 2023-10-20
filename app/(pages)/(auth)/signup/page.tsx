@@ -17,7 +17,7 @@ export default function SignUpPage() {
 			email: e.currentTarget.email.value,
 			password: e.currentTarget.password.value,
       options: {
-        emailRedirectTo: `${location.origin}/api/auth/callback`,
+        emailRedirectTo: `${location.origin}/auth/callback`,
 				data: {
 					full_name: e.currentTarget.fullname.value,
 					avatar_url: '/default-profile-picture.png'
