@@ -18,7 +18,7 @@ async function getData() {
 	console.log(`Fetching articles from supabase`)
 	const { data, error } = await supabase
 		.from('articles')
-		.select('*, author: profiles(full_name)')
+		.select('*, author: profiles(full_name, user_name)')
 		.eq('user_id', session.user.id)
 		.order('created_at', { ascending: false })
 

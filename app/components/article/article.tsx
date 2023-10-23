@@ -31,7 +31,7 @@ export default async function Article (props: Props) {
 							<DeleteButton id={data.id} redirectTo='/dashboard/articles' />
 						</div>
 						:
-						<p className={style.author}>{data.author.full_name}</p>
+						<p className={style.author}>{data.author.full_name || data.author.user_name}</p>
 					}
 				</div>
 				<Image

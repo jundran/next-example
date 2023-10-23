@@ -25,7 +25,7 @@ export default async function Profile() {
 	return (
 		<div>
 			<Link className='link-button' href='/dashboard/profile/edit'>Edit Profile</Link>
-			<h2>{profile.full_name}</h2>
+			<h2>{profile.full_name || profile.user_name}</h2>
 			<p>{user.email}</p>
 			<Image
 				src={avatarUrl}

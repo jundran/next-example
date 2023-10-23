@@ -17,6 +17,8 @@ export async function getUserProfileData(userId: string) {
 }
 
 export function getAvatarPublicUrl(url: string) {
+	if (url.startsWith('http')) return url // avatars.githubusercontent.com
+
 	const supabase = createClientComponentClient()
 	const { data: { publicUrl } } = supabase.storage
 		.from('avatars')

@@ -12,6 +12,11 @@ const config = {
         protocol: 'https',
 				hostname: 'lxttujrgpghhxzinwpir.supabase.co',
 				port: ''
+      },
+			{
+        protocol: 'https',
+				hostname: 'avatars.githubusercontent.com',
+				port: ''
       }
     ]
   },

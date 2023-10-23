@@ -13,3 +13,17 @@
 .changeFormLink:hover {
 	text-decoration: underline;
 }
+
+.githubLoginButton {
+	background: var(--purple-grey);
+	margin-bottom: 40px;
+}
+
+.githubLoginButton:hover {
+	background: lightgrey;
+}
+
+.githubLoginButton img {
+	max-width: 140px;
+	height: auto;
+}

@@ -48,7 +48,7 @@ function InnerJSX(props: Props) {
 			<div>
 				<h2 className="mobile-never">{data.article_title}</h2>
 				<p className={style.summary}>{data.summary}</p>
-				<p className={style.author}>{data.author.full_name}</p>
+				<p className={style.author}>{data.author.full_name || data.author.user_name}</p>
 				{userOwnsArticle &&
 					<div className={style.buttons}>
 						<Link className='link-button' href={`/dashboard/articles/${data.id}`}>View</Link>

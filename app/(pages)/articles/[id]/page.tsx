@@ -16,7 +16,7 @@ export async function getArticleData(id: string) {
 	console.log(`Fetching article with id ${id} from supabase`)
 	const { data, error } = await supabase
 		.from('articles')
-		.select('*, author: profiles(full_name)')
+		.select('*, author: profiles(full_name, user_name)')
 		.eq('id', id)
 		.single()
 

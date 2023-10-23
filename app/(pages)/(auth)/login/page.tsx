@@ -1,10 +1,12 @@
 "use client"
 import { FormEvent, useState, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 import style from '../page.module.css'
 import LoginForm from "./loginForm"
+import githubLogo from '~/public/images/github-logo.png'
 
 export default function LoginPage() {
 	const router = useRouter()
@@ -64,7 +66,9 @@ export default function LoginPage() {
 				<h1>Welcome Back</h1>
 				<h2>Log in to see the dashboard</h2>
 				<h3>Login With GitHub</h3>
-				<button onClick={handleGitHubLogin}>Github login</button>
+				<button className={`${style.githubLoginButton} button-unstyled`} onClick={handleGitHubLogin}>
+					<Image src={githubLogo} alt='github logo'/>
+				</button>
 
 				<h3>Login With Username and Password</h3>
 				<LoginForm error={error} handleSubmit={handleSubmit} />

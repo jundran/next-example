@@ -7,7 +7,9 @@ import Avatar from './avatar'
 import style from './profileForm.module.css'
 
 export default function ProfileForm({ user }: { user: User }) {
+	const [loading, setLoading] = useState(true)
 	const [fullname, setFullname] = useState('')
+	const [username, setUsername] = useState('')
 	const [avatarUrl, setAvatarUrl] = useState('')
 	const [avatarPublicUrl, setAvatarPublicUrl] = useState('')
 	const [emailMessage, setEmailMessage] = useState('')
@@ -15,8 +17,10 @@ export default function ProfileForm({ user }: { user: User }) {
 	useEffect(() => {
 		async function getData() {
 			const data = await getUserProfileData(user.id)
-			setFullname(data.full_name)
+			setFullname(data.full_name || data.user_name)
+			setUsername(data.user_name) // user_name is provided by github
 			setAvatarUrl(data.avatar_url)
+			setLoading
 		}
 		getData()
 	}, [user.id])
@@ -63,23 +67,29 @@ export default function ProfileForm({ user }: { user: User }) {
 				</ul>
 				<button>Update Information</button>
 			</form>
-			<hr />
-			<form className={style.textFields} onSubmit={handleSubmitEmail}>
-				<h2>Email</h2>
-				<ul className="ul-unstyled">
-					<li className="form-field">
-						<p>Email: {user.email}</p>
-						<label htmlFor="email" className="label">Change Email</label>
-						<input
-							className="input"
-							id='email'
-							name='email'
-						/>
-						{emailMessage && <p>{emailMessage}</p>}
-					</li>
-				</ul>
-				<button>Update Email</button>
-			</form>
+			{/* Can only change email if logged in with username and password
+				and not third-party auth provider */}
+			{!loading && !username &&
+				<>
+					<hr />
+					<form className={style.textFields} onSubmit={handleSubmitEmail}>
+						<h2>Email</h2>
+						<ul className="ul-unstyled">
+							<li className="form-field">
+								<p>Email: {user.email}</p>
+								<label htmlFor="email" className="label">Change Email</label>
+								<input
+									className="input"
+									id='email'
+									name='email'
+								/>
+								{emailMessage && <p>{emailMessage}</p>}
+							</li>
+						</ul>
+						<button>Update Email</button>
+					</form>
+				</>
+			}
 			<hr />
 			{avatarPublicUrl &&
 				<Avatar
