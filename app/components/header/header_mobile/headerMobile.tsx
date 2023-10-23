@@ -4,6 +4,8 @@ import Link from 'next/link'
 import ThemeToggle from '../themeToggle/themeToggle'
 import { LinkData } from '@/types/app'
 import style from './headerMobile.module.css'
+import AuthButton from '../authButton'
+import { User } from '@supabase/auth-helpers-nextjs'
 
 type HamburgerProps = {
 	showMenu: boolean
@@ -20,9 +22,10 @@ function Hamburger ({ setShowMenu }: HamburgerProps) {
 type Props = {
 	layoutClass: string
 	links: LinkData[]
+	user: User | null
 }
 
-export default function MobileMenu ({ layoutClass, links }: Props ) {
+export default function MobileMenu ({ layoutClass, links, user }: Props ) {
 	const [showMenu, setShowMenu] = useState(false)
 	const menuRef = useRef<HTMLDivElement>(null)
 
@@ -51,6 +54,7 @@ export default function MobileMenu ({ layoutClass, links }: Props ) {
 						{link.title}
 					</Link>
 				)}
+				<AuthButton user={user} onClick={() => setShowMenu(false)}/>
 				<button onClick={() => setShowMenu(false)}>Close</button>
 			</div>
 		</header>

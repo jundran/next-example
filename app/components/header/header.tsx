@@ -59,12 +59,12 @@ export default async function Header () {
 								{link.title}
 							</Link>
 							)}
-							<AuthButton />
+							<AuthButton user={user}/>
 						</nav>
 					</div>
 				</div>
 			</header>
-			<MobileMenu layoutClass='tablet-only' links={links} />
+			<MobileMenu layoutClass='tablet-only' links={links} user={user} />
 		</>
 	)
 }

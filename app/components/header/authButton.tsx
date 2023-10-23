@@ -1,16 +1,14 @@
 import Link from "next/link"
-import getLoggedInUser from "@/utils/auth"
 import LogoutButton from "../logoutButton/LogoutButton"
+import { User } from "@supabase/supabase-js"
 
-export default async function AuthButton() {
-	const user = await getLoggedInUser()
-
+export default function AuthButton({ user, onClick }: { user: User | null, onClick?: () => void }) {
 	return (
 		<>
 			{user ?
-				<LogoutButton />
+				<LogoutButton onClick={onClick} />
 				:
-				<Link className="menu-link" href='/login'>
+				<Link onClick={onClick} className="menu-link" href='/login'>
 					Login
 				</Link>
 			}

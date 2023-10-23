@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation'
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
-export default function LogoutButton() {
+export default function LogoutButton({ onClick }: { onClick?: () => void }) {
   const router = useRouter()
 
   const handleLogout = async () => {
@@ -16,7 +16,12 @@ export default function LogoutButton() {
   }
 
   return (
-    <button onClick={handleLogout} className='button-unstyled menu-link'>
+    <button onClick={() => {
+				handleLogout()
+				onClick()
+			}}
+			className='button-unstyled menu-link'
+		>
       Logout
     </button>
   )
