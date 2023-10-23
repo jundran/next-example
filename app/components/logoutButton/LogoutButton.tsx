@@ -18,7 +18,7 @@ export default function LogoutButton({ onClick }: { onClick?: () => void }) {
   return (
     <button onClick={() => {
 				handleLogout()
-				onClick()
+				if (onClick) onClick()
 			}}
 			className='button-unstyled menu-link'
 		>
