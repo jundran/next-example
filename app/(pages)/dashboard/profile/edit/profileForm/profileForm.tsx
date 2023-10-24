@@ -20,7 +20,7 @@ export default function ProfileForm({ user }: { user: User }) {
 			setFullname(data.full_name || data.user_name)
 			setUsername(data.user_name) // user_name is provided by github
 			setAvatarUrl(data.avatar_url)
-			setLoading
+			setLoading(false)
 		}
 		getData()
 	}, [user.id])
